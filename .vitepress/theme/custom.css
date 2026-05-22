@@ -1,0 +1,93 @@
+/**
+ * 自定义样式
+ * ========
+ * 覆盖 VitePress 默认主题的 CSS 变量或样式。
+ */
+
+/* Hero 副标题字号缩小 */
+.VPHero .text {
+  font-size: 40px;
+}
+
+/* 英文 tagline 上边距归零 */
+.VPHero .tagline {
+  padding-top: 0;
+}
+
+/* ---- 首页功能卡片：图标在左，标题+描述在右 ---- */
+
+.VPFeature .box {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+/* 图标跨越两行，垂直方向居中 */
+.VPFeature .icon {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  margin-bottom: 0;
+  align-self: center;
+}
+
+/* 标题在图标右侧第一行 */
+.VPFeature .title {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* 描述在标题下方第二行 */
+.VPFeature .details {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 0;
+}
+
+/* ---- 搜索框：圆角胶囊形状 ---- */
+
+/* 导航栏中的搜索按钮 */
+.DocSearch-Button {
+  border-radius: 20px;
+}
+
+/* 搜索弹窗整体圆角 */
+.VPLocalSearchBox .shell {
+  border-radius: 12px !important;
+}
+
+/* 弹窗中的搜索输入栏也保持圆角胶囊形 */
+.VPLocalSearchBox .search-bar {
+  border-radius: 20px !important;
+}
+
+/* ---- 去掉主题切换按钮和社交链接之间的竖线，并增加间距 ---- */
+.VPNavBarAppearance + .VPSocialLinks::before {
+  display: none;
+}
+
+.VPNavBarAppearance + .VPSocialLinks {
+  margin-left: 16px;
+}
+
+/* ---- GitHub 图标后显示文字 ---- */
+
+/* 社交链接容器默认只有 36px，需要加宽才能放下图标 + 文字 */
+.VPNavBarSocialLinks .VPSocialLink[aria-label="github"] {
+  width: auto;
+  padding: 0 8px;
+}
+
+.VPNavBarSocialLinks .VPSocialLink[aria-label="github"]::after {
+  content: "GitHub";
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
+
+.VPNavBarSocialLinks .VPSocialLink[aria-label="github"]:hover::after {
+  color: var(--vp-c-text-1);
+}
+

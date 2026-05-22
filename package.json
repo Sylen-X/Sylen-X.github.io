@@ -1,0 +1,14 @@
+{
+  "name": "sylen-x-blog",
+  "version": "1.0.0",
+  "description": "Sylen-X の博客 - 在这里，记录我眼中的世界",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
