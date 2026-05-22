@@ -27,6 +27,9 @@ export default defineConfig({
   // 此项目保持 VitePress 默认值 false
   cleanUrls: false,
 
+  // 排除非博客内容的 markdown 文件，避免构建时死链接检测报错
+  srcExclude: ["README.md"],
+
   // ============ 主题配置 ============
   themeConfig: {
     // ---- 顶部导航栏 ----
